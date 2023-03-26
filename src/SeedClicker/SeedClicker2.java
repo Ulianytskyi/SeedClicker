@@ -12,7 +12,8 @@ public class SeedClicker2 extends JFrame {
     private long _price = scoreIncrement * 100;
     private JLabel hiScoreLabel = new JLabel("Hi-Score: 0");
     private JLabel scoreLabel = new JLabel("Score: 0");
-    private JLabel rateLabel = new JLabel("Rate: x1 --> Next Rate Price: 100");
+    private JLabel currRateLabel = new JLabel("Current Rate: x1");
+    private JLabel nextRateLabel = new JLabel("Next Rate Price: 100");
 
     public SeedClicker2() {
 
@@ -34,7 +35,8 @@ public class SeedClicker2 extends JFrame {
                         score -= _price;
                         scoreIncrement *= 2;
                         _price = scoreIncrement * 100;
-                        rateLabel.setText("Rate: x" + scoreIncrement + " --> Next Rate Price: " + _price);
+                        currRateLabel.setText("Rate: x" + scoreIncrement);
+                        nextRateLabel.setText("Next Rate Price: " + _price);
                         scoreLabel.setText("Score: " + score);
                     }
                 //}
@@ -43,7 +45,8 @@ public class SeedClicker2 extends JFrame {
         add(hiScoreLabel);
         add(scoreLabel);
         add(clickButton);
-        add(rateLabel);
+        add(currRateLabel);
+        add(nextRateLabel);
         add(doubleButton);
         pack();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
